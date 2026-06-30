@@ -1,6 +1,5 @@
 
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
 int ft_printf(const char *, ...)
 {
@@ -8,4 +7,5 @@ int ft_printf(const char *, ...)
 	// ler as flags %
 	// diferenciar cada letra de cada flag
 	// imprimir va_arg
+	return 0;
 }
