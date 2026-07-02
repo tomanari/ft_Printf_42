@@ -12,7 +12,11 @@ int ft_printf(const char *format, ...)
 	va_start (arg, format);
 	while(*format)
 	{
-		
+		if (*format == '%')
+		{
+			format++;
+			count += ft_parser(*format, arg);
+		}
 	}
 	// utilizar va_start, va_arg, va_copy, va_end - para criar os parametros aceitos pela printf
 	// ler as flags %
