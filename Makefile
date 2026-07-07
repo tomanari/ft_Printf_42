@@ -24,8 +24,9 @@ HEADER = ft_printf.h
 
 # Arquivos fonte
 SRCS = 	ft_printf.c \
-				ft_putchar.c \
-				ft_putstr.c
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putnbr
 
 
 # Arquivos objeto gerados na compilação

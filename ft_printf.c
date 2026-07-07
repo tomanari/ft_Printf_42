@@ -1,26 +1,25 @@
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int 		i;
-	int			count;
+	int		count;
 	va_list	arg;
 
-	i = 0;
 	count = 0;
 	va_start (arg, format);
-	while(*format)
+	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			count += ft_parser(*format, arg);
+			count += ft_parser(*format, &arg);
 		}
+		else
+			count += ft_putchar(*format);
+		format++;	
+		
 	}
-	// utilizar va_start, va_arg, va_copy, va_end - para criar os parametros aceitos pela printf
-	// ler as flags %
-	// diferenciar cada letra de cada flag
-	// imprimir va_arg
-	return 0;
+	va_end(arg);
+	return (count);
 }
