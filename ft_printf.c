@@ -17,8 +17,8 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 			count += ft_putchar(*format);
-		format++;	
-		
+		format++;
+			
 	}
 	va_end(arg);
 	return (count);

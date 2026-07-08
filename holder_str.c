@@ -37,3 +37,8 @@ int	h_str(va_list *args)
 	return (ft_putstr(str));
 }
 
+int	h_percent(va_list *args)
+{
+	(void)args;
+	return (ft_putchar ('%'));
+}
