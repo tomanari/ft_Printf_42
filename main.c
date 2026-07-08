@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    ft_putnbr(25412);
+    ft_printf("Olá %s","marcella");
     return 0;
 }
