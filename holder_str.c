@@ -16,6 +16,15 @@ int	ft_putstr(char *str)
 		count++;
 	}
 	return (count);
+}	
+int	h_char(va_list *args)
+{
+	char	c;
+
+	c = va_arg(*args, int);
+	if (!c)
+		return(ft_putstr("(null)"));
+	return (ft_putchar(c));
 }
 
 int	h_str(va_list *args)

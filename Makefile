@@ -26,7 +26,10 @@ HEADER = ft_printf.h
 SRCS = 	ft_printf.c \
 		ft_putchar.c \
 		ft_putstr.c \
-		ft_putnbr
+		ft_putnbr \
+		holder_nbr.c \
+		holder_str.c \
+		holder_hex.c
 
 
 # Arquivos objeto gerados na compilação
