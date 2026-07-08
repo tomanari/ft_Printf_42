@@ -18,8 +18,13 @@ int	ft_putstr(char *str)
 	return (count);
 }
 
-int	hold_str(va_list *args)
+int	h_str(va_list *args)
 {
-	return (ft_putstr(va_arg(*args, char *)));
+	char *str;
+
+	str = va_arg(*args, char *);
+	if (!str)
+		return (ft_putstr("(null)"));
+	return (ft_putstr(str));
 }
 

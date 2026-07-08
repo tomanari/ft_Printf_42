@@ -9,8 +9,8 @@ int	ft_parser(char specifier, va_list *args)
 	init = 0;
 	if (!init)
 	{
-		table['s'] = hold_str;
-		table['i'] = hold_str;
+		table['s'] = h_str;
+		table['i'] = h_str;
 
 		init = 1;
 	}

@@ -11,7 +11,7 @@ int		ft_printf(const char *, ...);
 int		ft_putchar(int c);
 int		ft_putstr(char *str);
 void    ft_putnbr(int nbr);
-int		hold_str(va_list *args);
+int		h_str(va_list *args);
 int		(**get_table(void))(va_list *args);
 int		ft_parser(char specifier, va_list *args);
 
