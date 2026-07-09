@@ -10,7 +10,7 @@ int	ft_parser(char spec, va_list *args)
 	//	{'p', h_ptr},
 		{'d', h_nbr},
 		{'i', h_nbr},
-		{'u', h_nbr},
+	//	{'u', h_hex},
 	//	{'x', h_hex},
 	//	{'X', h_hex},
 		{'%', h_percent},

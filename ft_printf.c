@@ -7,7 +7,7 @@ int	ft_printf(const char *format, ...)
 	va_list	arg;
 
 	count = 0;
-	va_start (arg, format);
+	va_start(arg, format);
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1))

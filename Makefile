@@ -24,12 +24,11 @@ HEADER = ft_printf.h
 
 # Arquivos fonte
 SRCS = 	ft_printf.c \
-		ft_putchar.c \
-		ft_putstr.c \
-		ft_putnbr \
 		holder_nbr.c \
 		holder_str.c \
-		holder_hex.c
+		holder_hex.c \
+		ft_parser.c \
+		main.c
 
 
 # Arquivos objeto gerados na compilação
