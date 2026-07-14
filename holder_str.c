@@ -2,8 +2,11 @@
 
 int	ft_putchar(int c)
 {
+	char	hold;
+
+	hold = (char)c;
 	write (1, &c, 1);
-	return (c);
+	return (1);
 }
 
 int	ft_putstr(char *str)
