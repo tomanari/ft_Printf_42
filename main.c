@@ -10,15 +10,16 @@ int main(void)
 
 	a = 42;
 	ptr = &a;
-	null_ptr = NULL;
+	//null_ptr = NULL;
 
 	// --- TESTANDO O %p ---
 	printf("--- Testando %%p ---\n");
-	printf("Original : %p\n", ptr);
-	ft_printf("Original : %p\n", ptr);
+	printf("Original: %p\n", ptr);
+	ft_printf("Meu: %p\n", ptr);
 	
-	ft_printf("%c\n", 99);
-	ft_printf("%d\n", 3000);
-	printf("%d\n", 3000);
+	// --- TESTANDO O %x ---
+	printf("--- Testando %%x ---\n");
+	printf("Original: %x\n", 3000);
+	ft_printf("Meu:%x\n", 3000);
   return 0;
 }

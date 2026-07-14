@@ -43,15 +43,14 @@ int	ft_puthex_base(unsigned long nbr, char *base)
 		res += ft_puthex_base(nbr / 16, base);
 		res += ft_puthex_base(nbr % 16, base);
 	}
-	else
-		res += ft_putchar(base[nbr]);
+	res += ft_putchar(base[nbr]);
 	return (res);
 }
 
 int	h_hex(char spec, va_list *args)
 {
-	unsigned int	num;
-	char					*base;
+	unsigned long int	num;
+	char							*base;
 
 	num = va_arg(*args, long int);
 	if (!spec)
