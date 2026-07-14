@@ -26,6 +26,7 @@ HEADER = ft_printf.h
 SRCS = 	ft_printf.c \
 		holder_nbr.c \
 		holder_str.c \
+		holder_hex.c \
 		main.c
 
 

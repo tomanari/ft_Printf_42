@@ -1,12 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   holder_str.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtomanar <mtomanar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/14 14:15:00 by mtomanar          #+#    #+#             */
+/*   Updated: 2026/07/14 17:34:01 by mtomanar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	ft_putchar(int c)
+int	ft_putchar(char c)
 {
-	char	hold;
-
-	hold = (char)c;
-	write (1, &c, 1);
-	return (1);
+	return (write (1, &c, 1));
 }
 
 int	ft_putstr(char *str)
@@ -22,14 +30,13 @@ int	ft_putstr(char *str)
 	}
 	return (count);
 }
+
 int	h_char(char spec, va_list *args)
 {
 	char	c;
 
 	(void)spec;
 	c = va_arg(*args, int);
-	if (!c)
-		return (ft_putstr("(null)"));
 	return (ft_putchar(c));
 }
 
@@ -46,6 +53,7 @@ int	h_str(char spec, va_list *args)
 
 int	h_percent(char spec, va_list *args)
 {
+	(void)spec;
 	(void)args;
 	return (ft_putchar ('%'));
 }

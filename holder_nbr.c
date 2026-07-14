@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   holder_nbr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtomanar <mtomanar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/14 14:14:51 by mtomanar          #+#    #+#             */
+/*   Updated: 2026/07/14 18:01:22 by mtomanar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -28,54 +39,30 @@ int	h_nbr(char spec, va_list *args)
 
 	(void)spec;
 	nbr = va_arg(*args, int);
-	if (!nbr)
-		return (ft_putstr("(null)"));
 	return (ft_putnbr(nbr));
 }
 
-int	ft_puthex_base(unsigned long nbr, char *base)
+unsigned int	ft_un_putnbr(unsigned int nbr)
 {
-	int	res;
+	int	count;
 
-	res = 0;
-	if (nbr >= 16)
-	{
-		res += ft_puthex_base(nbr / 16, base);
-		res += ft_puthex_base(nbr % 16, base);
-	}
-	res += ft_putchar(base[nbr]);
-	return (res);
+	count = 0;
+	if (nbr > 9)
+		count += ft_putnbr(nbr / 10);
+	count += ft_putchar(nbr % 10 + '0');
+	return (count);
 }
 
-int	h_hex(char spec, va_list *args)
+int	h_un_nbr(char spec, va_list *args)
 {
-	unsigned long int	num;
-	char							*base;
+	unsigned int	nbr;
+	int				count;
 
-	num = va_arg(*args, long int);
-	if (!spec)
-		return (ft_putstr("(null)"));
-	if (spec == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
-	return (ft_puthex_base(num, base));
-}
-
-int	h_ptr(char spec, va_list *args)
-{
-	unsigned long	ptr;
-	int						res;
-
+	count = 0;
 	(void)spec;
-	res = 0;
-	ptr = (unsigned long)va_arg(*args, void *);
-	if (ptr == 0)
-	{
-		res += ft_putstr("(nil)");
-		return (res);
-	}
-	res += ft_putstr("0x");
-	res += ft_puthex_base(ptr, "0123456789abcdef");
-	return (res);
+	nbr = va_arg(*args, unsigned int);
+	if (nbr >= 10)
+		count += ft_un_putnbr(nbr / 10);
+	count += ft_putchar(nbr % 10 + '0');
+	return (count);
 }
