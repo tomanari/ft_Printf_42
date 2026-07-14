@@ -6,7 +6,7 @@
 /*   By: mtomanar <mtomanar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 17:42:26 by mtomanar          #+#    #+#             */
-/*   Updated: 2026/07/14 17:42:43 by mtomanar         ###   ########.fr       */
+/*   Updated: 2026/07/14 20:45:03 by mtomanar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,27 @@ int	h_hex(char spec, va_list *args)
 {
 	unsigned long int	num;
 	char				*base;
+	int					res;
+	void				*ptr;
 
-	num = va_arg(*args, long int);
-	if (!spec)
-		return (ft_putstr("(null)"));
-	if (spec == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
-	return (ft_puthex_base(num, base));
-}
-
-int	h_ptr(char spec, va_list *args)
-{
-	unsigned long	ptr;
-	int				res;
-
-	(void)spec;
 	res = 0;
-	ptr = (unsigned long)va_arg(*args, void *);
-	if (ptr == 0)
+	if (spec == 'X')
+		base = "0123456789ABCDEF";
+	else
+		base = "0123456789abcdef";
+	if (spec == 'p')
 	{
-		res += ft_putstr("(nil)");
-		return (res);
+		ptr = va_arg(*args, void *);
+		if (!ptr)
+			return (ft_putstr("(nil)"));
+		num = (unsigned long int)ptr;
+		res += ft_putstr("0x");
+		res += ft_puthex_base(num, base);
 	}
-	res += ft_putstr("0x");
-	res += ft_puthex_base(ptr, "0123456789abcdef");
+	else if (spec == 'x' || spec == 'X')
+	{
+		num = va_arg(*args, unsigned int);
+		res += ft_puthex_base(num, base);
+	}
 	return (res);
 }

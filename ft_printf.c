@@ -6,7 +6,7 @@
 /*   By: mtomanar <mtomanar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:14:41 by mtomanar          #+#    #+#             */
-/*   Updated: 2026/07/14 18:04:07 by mtomanar         ###   ########.fr       */
+/*   Updated: 2026/07/14 20:31:58 by mtomanar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_parser(char spec, va_list *args)
 	const t_dict	dict[] = {
 	{'c', h_char},
 	{'s', h_str},
-	{'p', h_ptr},
+	{'p', h_hex},
 	{'d', h_nbr},
 	{'i', h_nbr},
 	{'u', h_un_nbr},

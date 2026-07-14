@@ -6,7 +6,7 @@
 /*   By: mtomanar <mtomanar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:19:18 by mtomanar          #+#    #+#             */
-/*   Updated: 2026/07/14 18:03:46 by mtomanar         ###   ########.fr       */
+/*   Updated: 2026/07/14 20:47:18 by mtomanar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	ft_printf("Meu:%x\n", 3000);
 	printf("%u \n", -1);
 	ft_printf("%u \n", -1);
-	// printf(" %x \n", 9223372036854775807LL);
-	// ft_printf(" %x ", 9223372036854775807LL);
+	printf(" %x \n", 54775807);
+	ft_printf(" %x ", 54775807);
 	return (0);
 }
