@@ -27,7 +27,6 @@ SRCS = 	ft_printf.c \
 		holder_nbr.c \
 		holder_str.c \
 		holder_hex.c \
-		ft_parser.c \
 		main.c
 
 
@@ -41,7 +40,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 
-# Como gerar arquivos objeto a partir dos fontes
+# Como gerar arquivos objeto a partir das fontes
 $(BIN)/%.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
