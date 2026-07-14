@@ -5,16 +5,16 @@ int	ft_parser(char spec, va_list *args)
 {
 	int			i;
 	t_dict	dict[] = {
-		{'c', h_char},
-		{'s', h_str},
-		{'p', h_ptr},
-		{'d', h_nbr},
-		{'i', h_nbr},
-		{'u', h_hex},
-		{'x', h_hex},
-		{'X', h_hex},
-		{'%', h_percent},
-		{0, NULL},
+	{'c', h_char},
+	{'s', h_str},
+	{'p', h_ptr},
+	{'d', h_nbr},
+	{'i', h_nbr},
+	{'u', h_hex},
+	{'x', h_hex},
+	{'X', h_hex},
+	{'%', h_percent},
+	{0, NULL},
 	};
 
 	i = 0;
@@ -44,7 +44,6 @@ int	ft_printf(const char *format, ...)
 		else
 			count += ft_putchar(*format);
 		format++;
-			
 	}
 	va_end(arg);
 	return (count);

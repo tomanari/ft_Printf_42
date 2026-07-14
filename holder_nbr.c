@@ -45,7 +45,7 @@ int	ft_puthex_base(unsigned long nbr, char *base)
 	}
 	else
 		res += ft_putchar(base[nbr]);
-	return(res);
+	return (res);
 }
 
 int	h_hex(char spec, va_list *args)
@@ -67,7 +67,7 @@ int	h_ptr(char spec, va_list *args)
 {
 	unsigned long	ptr;
 	int						res;
-	
+
 	(void)spec;
 	res = 0;
 	ptr = (unsigned long)va_arg(*args, void *);
