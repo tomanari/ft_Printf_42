@@ -30,5 +30,6 @@ int	main(void)
 	ft_printf("%u \n", -1);
 	printf(" %x \n", 54775807);
 	ft_printf(" %x ", 54775807);
+	ft_printf("Hello %a world");
 	return (0);
 }
